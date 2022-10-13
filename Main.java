@@ -43,9 +43,11 @@ public class hj {
             }
             if (guess > NUMBER) {
                 System.out.println("Too high");
-            } else if (guess < NUMBER) {
+            } 
+            else if (guess < NUMBER) {
                 System.out.println("Too low");
-            } else {
+            } 
+            else {
                 System.out.println("number is " + NUMBER);
                 System.out.println("That's right!");
                 System.out.println("Congratulations, You won absolutely nothing and wasted your time.");
@@ -62,7 +64,6 @@ public class hj {
     public static void main(String[] args) {
         formality();
         game();
-
     }
 }
 

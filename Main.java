@@ -33,8 +33,6 @@ public class hj {
 
     public static void game() {
         Scanner player = new Scanner(System.in);
-
-        // prompt player for guess
         System.out.println("Just guess a number between 1 and 100");
         int guess = player.nextInt();
         while (guess != NUMBER) {
@@ -48,7 +46,7 @@ public class hj {
             } else if (guess < NUMBER) {
                 System.out.println("Too low");
             } else {
-                System.out.println("number is " + NUMBER); //DEBUG
+                System.out.println("number is " + NUMBER);
                 System.out.println("That's right!");
                 System.out.println("Congratulations, You won absolutely nothing and wasted your time.");
                 System.exit(0);

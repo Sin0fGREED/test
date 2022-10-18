@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
 public class hj {
@@ -9,21 +10,31 @@ public class hj {
         String name = scanner.nextLine();
         System.out.println("Hello " + name + "!");
         System.out.println("What a nice name you've got.");
-        System.out.println("How old are you?");
-        int age = scanner.nextInt();
+        System.out.println("May i ask How old you are?");
+        int age = 0;
+        do {
+                try {
+                    age = scanner.nextInt();
+                }
+                catch (InputMismatchException e){}
+                finally {scanner.nextLine();}
+                System.out.println("Age must be a number");
+            } while (age == 0);
+
+
         if  (age >= 90) {
             System.out.println("STOP THE CAP!");
             System.out.println("How old are you!");
+            age = scanner.nextInt();
         }
         else if (age <= 10){
             System.out.println("GROW UP!");
             System.out.println("How old are you!");
+            age = scanner.nextInt();
         }
-        System.out.println("Sorry, How old are you?");
-        int age3 = scanner.nextInt();
-        System.out.println("Oh, so you're " + age3 + " years old.");
+
+        System.out.println("Oh, so you're " + age + " years old.");
         System.out.println("Good to know.");
-        scanner.nextLine();
         System.out.println("What are your hobby's?");
         String hobby = scanner.nextLine();
         System.out.println("oh so you like " + hobby + " that's interesting.");
@@ -43,11 +54,9 @@ public class hj {
             }
             if (guess > NUMBER) {
                 System.out.println("Too high");
-            } 
-            else if (guess < NUMBER) {
+            } else if (guess < NUMBER) {
                 System.out.println("Too low");
-            } 
-            else {
+            } else {
                 System.out.println("number is " + NUMBER);
                 System.out.println("That's right!");
                 System.out.println("Congratulations, You won absolutely nothing and wasted your time.");
@@ -64,16 +73,6 @@ public class hj {
     public static void main(String[] args) {
         formality();
         game();
-    }
-}
-
-    private static final Random Random = new Random();
-    private static final int NUMBER = Random.nextInt(100) + 1;
-    private static int guess = 0;
-
-    public static void main(String[] args) {
-    formality();
-    game();
 
     }
 }

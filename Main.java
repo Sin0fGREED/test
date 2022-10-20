@@ -16,9 +16,10 @@ public class hj {
                 try {
                     age = scanner.nextInt();
                 }
-                catch (InputMismatchException e){}
+                catch (InputMismatchException e){ System.out.println("Age must be a number");}
+
                 finally {scanner.nextLine();}
-                System.out.println("Age must be a number");
+
             } while (age == 0);
 
 
